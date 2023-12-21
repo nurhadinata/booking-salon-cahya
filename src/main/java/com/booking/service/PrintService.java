@@ -34,7 +34,6 @@ public class PrintService {
         List<Reservation> listAllReservations = ReservationRepository.getAllReservations();
 
         AtomicInteger num=new AtomicInteger(0);
-        double totalProfit =0;
         System.out.printf("| %-4s | %-7s | %-15s | %-25s | %-15s | %-10s |\n",
                 "No.", "ID", "Nama Customer", "Nama Service", "Total Biaya", "Workstage");
         System.out.println("+=========================================================================================+");

@@ -23,7 +23,7 @@ public class MenuService {
         int optionMainMenu;
         int optionSubMenu;
 
-		boolean backToMainMenu = false;
+		boolean backToMainMenu = true;
         boolean backToSubMenu = false;
         do {
             PrintService.printMenu("Main Menu", mainMenuArr);
@@ -68,7 +68,7 @@ public class MenuService {
                     backToMainMenu = false;
                     break;
             }
-        } while (!backToMainMenu);
+        } while (backToMainMenu);
 		
 	}
 }
