@@ -107,6 +107,7 @@ public class ReservationService {
                             .orElse(null);
             
             boolean inputValidation = false;
+            
             if(choosedService!=null && confirmService == null){
                 listChoosenServices.add(choosedService);
             }else if(choosedService == null){
@@ -134,6 +135,8 @@ public class ReservationService {
         
         Reservation reservation = new Reservation(choosedCustomer, choosedEmployee, listChoosenServices, "In Process");
         ReservationRepository.AddReservation(reservation);
+        System.out.println("Booking Berhasil!");
+
 
         
     }
@@ -188,15 +191,19 @@ public class ReservationService {
             if(inputFinish.equalsIgnoreCase("Finish")){
                 choosedReservation.setWorkstage("Finish");
                 validateFinish = true;
+                System.out.println("Reservasi dengan id "+choosedReservation.getReservationId()+" sudah Finish");
             }else if(inputFinish.equalsIgnoreCase("Cancel")){
                 choosedReservation.setWorkstage("Canceled");
                 validateFinish = true;
+                System.out.println("Reservasi dengan id "+choosedReservation.getReservationId()+" sudah Cancel");
             }else{
                 System.out.println("Input tidak valid!");
                 validateFinish = false;
             }
 
         }while(!validateFinish);
+
+
 
 
 

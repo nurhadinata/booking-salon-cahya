@@ -36,7 +36,7 @@ public class PrintService {
         AtomicInteger num=new AtomicInteger(0);
         System.out.printf("| %-4s | %-7s | %-15s | %-25s | %-15s | %-10s |\n",
                 "No.", "ID", "Nama Customer", "Nama Service", "Total Biaya", "Workstage");
-        System.out.println("+=========================================================================================+");
+        System.out.println("+=============================================================================================+");
         listAllReservations.stream()
             .filter(reservation -> reservation.getWorkstage().equals("In Process"))
             .forEach(reservation ->{
@@ -69,7 +69,7 @@ public class PrintService {
         AtomicInteger num2=new AtomicInteger(0);
         System.out.printf("| %-4s | %-7s | %-11s | %-20s | %-15s |\n",
                 "No.", "ID", "Nama", "Alamat", "Pengalaman");
-        System.out.println("+=========================================================================================+");
+        System.out.println("+=======================================================================+");
         listAllPersons.stream()
             .filter(person -> person instanceof Employee)
             .map(employees -> (Employee)employees)

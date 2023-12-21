@@ -8,6 +8,7 @@ import com.booking.models.Person;
 import com.booking.models.Reservation;
 import com.booking.models.Service;
 import com.booking.repositories.PersonRepository;
+import com.booking.repositories.ReservationRepository;
 import com.booking.repositories.ServiceRepository;
 
 public class MenuService {
@@ -24,12 +25,14 @@ public class MenuService {
         int optionSubMenu;
 
 		boolean backToMainMenu = true;
-        boolean backToSubMenu = false;
+        boolean backToSubMenu = true;
+        
         do {
             PrintService.printMenu("Main Menu", mainMenuArr);
             optionMainMenu = Integer.valueOf(input.nextLine());
             switch (optionMainMenu) {
                 case 1:
+                    backToSubMenu = true;
                     do {
                         PrintService.printMenu("Show Data", subMenuArr);
                         optionSubMenu = Integer.valueOf(input.nextLine());
@@ -53,6 +56,9 @@ public class MenuService {
                                 break;
                             case 0:
                                 backToSubMenu = false;
+                                break;
+                            default:
+                                System.out.println("Input tidak valid");
                         }
                     } while (backToSubMenu);
                     break;
@@ -67,6 +73,8 @@ public class MenuService {
                 case 0:
                     backToMainMenu = false;
                     break;
+                default:
+                    System.out.println("Input tidak valid");
             }
         } while (backToMainMenu);
 		
